@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
+import logo from "../images/hanger-line.png"
 
 class LoginPage extends Component {
   constructor(props) {
@@ -33,7 +34,7 @@ class LoginPage extends Component {
       })
       .catch(err => {
         console.log("Login Page ERROR", err);
-        alert("Sorry! Something went wrong.");
+        // alert("Sorry! Something went wrong.");
       });
   }
 
@@ -45,8 +46,11 @@ class LoginPage extends Component {
 
     return (
       <section className="LoginPage">
-        
-        <form onSubmit={event => this.handleSubmit(event)}>
+        <header className="App-header">
+        <h1>PAPER DOLLS</h1>
+          <img src={logo} className="App-logo" alt="logo" />
+          
+          <form onSubmit={event => this.handleSubmit(event)}>
           <label>
             
             <input value={this.state.email}
@@ -63,6 +67,11 @@ class LoginPage extends Component {
 
           <button>Log In</button>
         </form>
+          <p>NEW? SIGNUP HERE</p>
+         
+        </header>
+        
+       
       </section>
     );
   }

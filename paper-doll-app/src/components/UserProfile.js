@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 class Profile extends Component {
     constructor(props) {
@@ -7,7 +7,11 @@ class Profile extends Component {
         this.state = {  }
     }
     render() { 
-        return (  );
+        return ( 
+            <div>
+                Hello.
+            </div>
+         );
     }
 }
  
