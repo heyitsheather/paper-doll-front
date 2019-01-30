@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import logo from "../images/hanger-line.png"
 
 class LoginPage extends Component {
@@ -67,7 +67,7 @@ class LoginPage extends Component {
 
           <button>Log In</button>
         </form>
-          <p>NEW? SIGNUP HERE</p>
+        <Link to="/signup-page"><button>New? Signup Here.</button></Link>
          
         </header>
         

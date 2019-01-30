@@ -9,6 +9,10 @@ class SignupPage extends Component {
       fullName: "",
       email: "",
       originalPassword: "",
+      chest: "",
+      waist: "",
+      hip: "",
+      inseam: "",
     };
   }
 
@@ -79,9 +83,9 @@ class SignupPage extends Component {
 
           <label>
             Chest:
-            <input value={this.state.bust}
+            <input value={this.state.chest}
                 onChange={event => this.genericSync(event)}
-                type="number" name="bust" placeholder="38.5" />
+                type="number" name="chest" placeholder="38.5" />
           </label>
 
           <label>
@@ -95,14 +99,14 @@ class SignupPage extends Component {
             Hip:
             <input value={this.state.hip}
                 onChange={event => this.genericSync(event)}
-                type="number" name="waist" placeholder="40" />
+                type="number" name="hip" placeholder="40" />
           </label>
 
           <label>
             Inseam:
             <input value={this.state.inseam}
                 onChange={event => this.genericSync(event)}
-                type="number" name="waist" placeholder="32" />
+                type="number" name="inseam" placeholder="32" />
           </label>
 
 

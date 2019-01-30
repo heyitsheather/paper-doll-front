@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Switch, Route} from "react-router-dom";
+import { Switch, Route, NavLink} from "react-router-dom";
 import axios from "axios";
 
 import './App.css';
@@ -64,6 +64,28 @@ class App extends Component {
     return (
 
       <div className="App">
+
+<header>
+        
+
+          <nav>
+            
+            {this.state.currentUser ? (
+              <span>
+                <b>{this.state.currentUser.email}</b>
+                <button onClick={() => this.logoutClick()}>
+                  Log Out
+                </button>
+              </span>
+            ) : (
+              <span>
+                <NavLink to="/signup-page">Sign Up</NavLink>
+                <NavLink to="/login-page">Log In</NavLink>
+              </span>
+            )}
+          </nav>
+        </header>
+      
        
       
         <Switch>
