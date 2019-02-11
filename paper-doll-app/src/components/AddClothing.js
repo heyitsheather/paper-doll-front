@@ -108,7 +108,7 @@ class AddClothing extends Component {
           </label>
 
           <label>
-            Size:
+            Price:
             <input value={this.state.price}
                 onChange={event => this.genericSync(event)}
                 type="text" name="price" placeholder="31" />
@@ -125,7 +125,7 @@ class AddClothing extends Component {
             Image:
             <input type="file" onChange={event => this.uploadImage(event)} />
           </label>
-          <img src={this.state.image} /> */}
+          <img src={this.state.image} alt=""/> */}
 
            
         

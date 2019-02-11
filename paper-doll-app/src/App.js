@@ -10,6 +10,7 @@ import UserDashboard from "./components/UserDashboard";
 import SignupPage from './components/SignupPage.js';
 import LoginPage from "./components/LoginPage.js";
 import AddClothing from "./components/AddClothing.js";
+import ClothingDetail from "./components/ClothingDetails.js";
 import Profile from "./components/UserProfile.js"
 
 class App extends Component {
@@ -92,6 +93,7 @@ class App extends Component {
           <Route exact path="/" component={UserDashboard} />
           <Route path="/feed" component={FeedPage} />
           <Route path="/add-clothing" component={AddClothing} />
+          <Route path="/clothing-detail" component={ClothingDetail} />
           <Route path="/user-dashboard" component={UserDashboard}/>
           <Route path="/user-profile" component={Profile}/>
           {/* Use "render" instead of "component" to pass props */}
