@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import { Switch, Route, NavLink} from "react-router-dom";
 import axios from "axios";
-
 import './App.css';
 import FeedPage from "./components/FeedPage.js"
 import NotFound from "./components/NotFound.js";
@@ -11,6 +10,7 @@ import SignupPage from './components/SignupPage.js';
 import LoginPage from "./components/LoginPage.js";
 import AddClothing from "./components/AddClothing.js";
 import ClothingDetail from "./components/ClothingDetails.js";
+import ClothingList from "./components/CothingList.js";
 import Profile from "./components/UserProfile.js"
 
 class App extends Component {
@@ -96,6 +96,7 @@ class App extends Component {
           <Route path="/clothing-detail" component={ClothingDetail} />
           <Route path="/user-dashboard" component={UserDashboard}/>
           <Route path="/user-profile" component={Profile}/>
+          <Route path="/clothing-list" component={ClothingList}/>
           {/* Use "render" instead of "component" to pass props */}
           <Route path="/signup-page" render={() =>
             <SignupPage currentUser={this.state.currentUser}

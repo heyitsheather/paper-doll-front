@@ -126,7 +126,7 @@ class AddClothing extends Component {
             Image:
             <input type="file" onChange={event => this.uploadImage(event)} />
           </label>
-          <img src={this.state.image} />
+          
            
         
 
