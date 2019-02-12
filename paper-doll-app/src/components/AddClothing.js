@@ -121,12 +121,12 @@ class AddClothing extends Component {
                 type="text" name="notes" placeholder="I like the baggy fit." />
           </label>
 
-          {/* <label>
+         
+          <label>
             Image:
             <input type="file" onChange={event => this.uploadImage(event)} />
           </label>
-          <img src={this.state.image} alt=""/> */}
-
+          <img src={this.state.image} />
            
         
 
