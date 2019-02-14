@@ -14,6 +14,8 @@ class AddClothing extends Component {
       image: "",
       notes: "",
       isSubmitSuccessful: false,
+      width: "",
+      height:"",
     };
   }
 
@@ -38,7 +40,7 @@ class AddClothing extends Component {
     )
     .then(response => {
       console.log("Upload Image", response.data);
-      this.setState({ image: response.data.fileUrl });
+      this.setState({ image: response.data.fileUrl, width: response.data.width, height: response.data.height });
     })
     .catch(err => {
       console.log("Upload Image ERROR", err);

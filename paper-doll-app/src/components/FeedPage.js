@@ -1,7 +1,7 @@
 import React from 'react';
 import Gallery from 'react-photo-gallery';
-import Lightbox from 'react-images';
 import axios from "axios";
+import Modal from 'react-awesome-modal';
 
 
 // function getClothingUrl(oneClothing) {
@@ -16,10 +16,11 @@ class FeedPage extends React.Component {
     this.state = {
       // initial array is empty while we are waiting for the API results
     clothingArray: [],
+    selectedClothingItem: null
   };
   
   this.closeLightbox = this.closeLightbox.bind(this);
-  this.openLightbox = this.openLightbox.bind(this);
+  this.openModal = this.openModal.bind(this);
   this.gotoNext = this.gotoNext.bind(this);
   this.gotoPrevious = this.gotoPrevious.bind(this);
 
@@ -36,7 +37,11 @@ class FeedPage extends React.Component {
 
           const clothingArray =response.data.map ((oneClothing)=>{
             return{
-              src: oneClothing.image
+              src: oneClothing.image,
+              width: oneClothing.width,
+              height: oneClothing.height,
+              key: oneClothing._id,
+              fullInfoKey: oneClothing,
             }
           })
 
@@ -54,14 +59,6 @@ class FeedPage extends React.Component {
   }
 
   
-  openLightbox(event, obj) {
-    let photos = this.state.clothingArray;
-    photos[obj.index].selected = !photos[obj.index].selected;
-    this.setState({
-      currentImage: obj.index,
-      lightboxIsOpen: true,});
-      console.log (this.state)
-  }
 
   closeLightbox() {
     this.setState({
@@ -79,25 +76,46 @@ class FeedPage extends React.Component {
       currentImage: this.state.currentImage + 1,
     });
   }
+
+  closeModal(){
+    this.setState({
+      selectedClothingItem: null
+    });
+  }
+
+ 
+
+
+
+openModal(event, obj) {
+  let photos = this.state.clothingArray;
+  photos[obj.index].selected = !photos[obj.index].selected;
+    console.log ("photosobj.index",photos[obj.index],obj)
+    this.setState({
+      currentImage: obj.index,
+      selectedClothingItem: photos[obj.index].fullInfoKey
+    });
+}
+
   render() {
     const {clothingArray}= this.state;
+    
     return(
           
         <section className= "clothingFeed">
-           {clothingArray.map(oneClothing => {
-             return(
+          
                <div>
-        <Gallery photos={clothingArray} onClick={this.openLightbox} />
-        <Lightbox images={clothingArray}
-          onClose={this.closeLightbox}
-          onClickPrev={this.gotoPrevious}
-          onClickNext={this.gotoNext}
-          currentImage={this.state.currentImage}
-          isOpen={this.state.lightboxIsOpen}/>
+        <Gallery photos={clothingArray} onClick={this.openModal} />
+        {this.state.selectedClothingItem&& <Modal visible={this.state.selectedClothingItem} width="400" height="300" effect="fadeInUp" onClickAway={() => this.closeModal()}>
+                    <div>
+                        <h1>{this.state.selectedClothingItem.type}</h1>
+                        <p>Some Contents</p>
+                        <a href="javascript:void(0);" onClick={() => this.closeModal()}>Close</a>
+                    </div>
+                </Modal>}
           </div>
         
-    );
-  })}
+    ;
   </section>
   );
 }

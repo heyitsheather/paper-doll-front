@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+// import Modal from "react-awesome-modal";
 
 class ClothingDetails extends Component {
   constructor(props) {
@@ -7,9 +8,11 @@ class ClothingDetails extends Component {
 
     this.state = {
       // we need the initial "specs" array to avoid an error with ".map()"
-      specs: [],
+      visable: false
     };
   }
+
+
 
   // React will call "componentDidMount()" automatically when ClothingDetails loads
   componentDidMount() {
@@ -34,8 +37,7 @@ class ClothingDetails extends Component {
     const { type, link, brand, price, image, notes, createdAt } = this.state;
     return (
       <section className="ClothingDetails">
-        <h2>{type}</h2>
-
+       
         <img src={image} alt={notes} />
 
         <h3>{type}</h3>
@@ -44,6 +46,7 @@ class ClothingDetails extends Component {
         <b>${price}</b>
 
         <p>Added on {createdAt}</p>
+
       </section>
     );
   }

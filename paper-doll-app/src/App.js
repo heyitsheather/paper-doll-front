@@ -12,6 +12,7 @@ import AddClothing from "./components/AddClothing.js";
 import ClothingDetail from "./components/ClothingDetails.js";
 import ClothingList from "./components/CothingList.js";
 import Profile from "./components/UserProfile.js"
+import Details from "./components/modal.js";
 
 class App extends Component {
   constructor(props) {
@@ -97,6 +98,7 @@ class App extends Component {
           <Route path="/user-dashboard" component={UserDashboard}/>
           <Route path="/user-profile" component={Profile}/>
           <Route path="/clothing-list" component={ClothingList}/>
+          <Route path="/modal" component={Details}/>
           {/* Use "render" instead of "component" to pass props */}
           <Route path="/signup-page" render={() =>
             <SignupPage currentUser={this.state.currentUser}
