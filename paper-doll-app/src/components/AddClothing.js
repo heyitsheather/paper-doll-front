@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 
 class AddClothing extends Component {
   constructor(props) {
@@ -85,7 +85,10 @@ class AddClothing extends Component {
 
     return (
       <section className="AddClothing">
-        <h2>Add a Clothing Item</h2>
+      <Link to="/feed"><button>DISCOVER A NEW LOOK</button></Link>
+                <Link to="/"><button>MY CLOSET</button></Link>
+  
+        <h2>ADD A CLOTHING ITEM</h2>
 
         <form onSubmit={event => this.handleSubmit(event)}>
           <label>
@@ -107,6 +110,13 @@ class AddClothing extends Component {
             <input value={this.state.brand}
                 onChange={event => this.genericSync(event)}
                 type="text" name="brand" placeholder="Levi" />
+          </label>
+
+          <label>
+            Size:
+            <input value={this.state.size}
+                onChange={event => this.genericSync(event)}
+                type="text" name="size" placeholder="Medium" />
           </label>
 
           <label>

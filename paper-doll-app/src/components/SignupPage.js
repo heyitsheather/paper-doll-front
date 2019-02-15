@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Redirect } from "react";
 import axios from "axios";
 
 class SignupPage extends Component {
@@ -11,7 +11,7 @@ class SignupPage extends Component {
       originalPassword: "",
       chest: "",
       waist: "",
-      hip: "",
+      hips: "",
       inseam: "",
     };
   }
@@ -46,11 +46,7 @@ class SignupPage extends Component {
     if (this.props.currentUser) {
       return (
         <section className="SignupPage">
-          <h2>You are signed up!</h2>
-          <p>
-            Welcome, {this.props.currentUser.fullName}!
-            Your user ID is <b>{this.props.currentUser._id}.</b>
-          </p>
+         <Redirect to="/user-dashboard" />
         </section>
       );
     }
@@ -97,9 +93,9 @@ class SignupPage extends Component {
 
           <label>
             Hip:
-            <input value={this.state.hip}
+            <input value={this.state.hips}
                 onChange={event => this.genericSync(event)}
-                type="number" name="hip" placeholder="40" />
+                type="number" name="hips" placeholder="40" />
           </label>
 
           <label>

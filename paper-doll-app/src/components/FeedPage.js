@@ -2,12 +2,8 @@ import React from 'react';
 import Gallery from 'react-photo-gallery';
 import axios from "axios";
 import Modal from 'react-awesome-modal';
-
-
-// function getClothingUrl(oneClothing) {
-//   return `/clothing-details/${oneClothing._id}`;
-// }
-
+import { Link } from "react-router-dom";
+// import Link from "react"
 
 
 class FeedPage extends React.Component {
@@ -19,10 +15,10 @@ class FeedPage extends React.Component {
     selectedClothingItem: null
   };
   
-  this.closeLightbox = this.closeLightbox.bind(this);
+  // this.closeLightbox = this.closeLightbox.bind(this);
   this.openModal = this.openModal.bind(this);
-  this.gotoNext = this.gotoNext.bind(this);
-  this.gotoPrevious = this.gotoPrevious.bind(this);
+  // this.gotoNext = this.gotoNext.bind(this);
+  // this.gotoPrevious = this.gotoPrevious.bind(this);
 
   }
 
@@ -66,16 +62,16 @@ class FeedPage extends React.Component {
       lightboxIsOpen: false,
     });
   }
-  gotoPrevious() {
-    this.setState({
-      currentImage: this.state.currentImage - 1,
-    });
-  }
-  gotoNext() {
-    this.setState({
-      currentImage: this.state.currentImage + 1,
-    });
-  }
+  // gotoPrevious() {
+  //   this.setState({
+  //     currentImage: this.state.currentImage - 1,
+  //   });
+  // }
+  // gotoNext() {
+  //   this.setState({
+  //     currentImage: this.state.currentImage + 1,
+  //   });
+  // }
 
   closeModal(){
     this.setState({
@@ -83,7 +79,9 @@ class FeedPage extends React.Component {
     });
   }
 
- 
+ openNewWindow(){
+   window.open()
+ }
 
 
 
@@ -105,12 +103,23 @@ openModal(event, obj) {
         <section className= "clothingFeed">
           
                <div>
+
+ <Link to="/add-clothing"><button>ADD A NEW ITEM</button></Link>
+                <Link to="/"><button>MY CLOSET</button></Link>
+
+                 <h1>THESE MIGHT LOOK GREAT ON YOU</h1>
+                 
         <Gallery photos={clothingArray} onClick={this.openModal} />
         {this.state.selectedClothingItem&& <Modal visible={this.state.selectedClothingItem} width="400" height="300" effect="fadeInUp" onClickAway={() => this.closeModal()}>
                     <div>
-                        <h1>{this.state.selectedClothingItem.type}</h1>
-                        <p>Some Contents</p>
-                        <a href="javascript:void(0);" onClick={() => this.closeModal()}>Close</a>
+                        {/* <img src={this.state.selectedClothingItem.image}/> */}
+                        <h1>{this.state.selectedClothingItem.brand} {this.state.selectedClothingItem.type}</h1>
+                        {/* <Link>{this.state.selectedClothingItem.link}link</Link> */}
+                        <p>{this.state.selectedClothingItem.size}</p>
+                        <p>{this.state.selectedClothingItem.notes}</p>
+                        {/* <p>VIEW MORE FROM THIS CLOSET</p> */}
+                        <a href={this.state.selectedClothingItem.link}>FIND IT HERE</a>
+                        {/* <a href="javascript:void(0);" onClick={() => this.closeModal()}>Close</a> */}
                     </div>
                 </Modal>}
           </div>

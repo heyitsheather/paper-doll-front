@@ -42,9 +42,10 @@ class UserDashboard extends Component {
         const {userArray}= this.state;
         return ( 
             <section>
-                <h1>Hello, User!</h1>
-                <Link to="/feed"><button>Discover a new look.</button></Link>
-                <Link to="/add-clothing"><button>Add a clothing item.</button></Link>
+               
+                <Link to="/feed"><button>DISCOVER A NEW LOOK</button></Link>
+                <Link to="/add-clothing"><button>ADD A NEW ITEM</button></Link>
+                <h1>WELCOME TO YOUR CLOSET</h1>
                 <Gallery photos={userArray}/>
             </section>
             

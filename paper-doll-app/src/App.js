@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Switch, Route, NavLink} from "react-router-dom";
+import { Switch, Route, NavLink, Redirect} from "react-router-dom";
 import axios from "axios";
 import './App.css';
 import FeedPage from "./components/FeedPage.js"
@@ -74,15 +74,13 @@ class App extends Component {
             
             {this.state.currentUser ? (
               <span>
-                <b>{this.state.currentUser.email}</b>
                 <button onClick={() => this.logoutClick()}>
                   Log Out
                 </button>
               </span>
             ) : (
               <span>
-                <NavLink to="/signup-page">Sign Up</NavLink>
-                <NavLink to="/login-page">Log In</NavLink>
+                <Redirect to="/login-page" />;
               </span>
             )}
           </nav>
