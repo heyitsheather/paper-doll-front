@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Redirect, Link } from "react-router-dom";
+import { Redirect, } from "react-router-dom";
+import {Input, Button} from "react-materialize";
 
 class AddClothing extends Component {
   constructor(props) {
@@ -48,13 +49,13 @@ class AddClothing extends Component {
     });
   }
 
-  syncSpecs(event, index) {
-    const { specs } = this.state;
-    // update the spec value at the given index
-    specs[index] = event.target.value;
-    // set the state with the updated specs array
-    this.setState({ specs });
-  }
+  // syncSpecs(event, index) {
+  //   const { specs } = this.state;
+  //   // update the spec value at the given index
+  //   specs[index] = event.target.value;
+  //   // set the state with the updated specs array
+  //   this.setState({ specs });
+  // }
 
   handleSubmit(event) {
     // stop the page refresh
@@ -85,65 +86,69 @@ class AddClothing extends Component {
 
     return (
       <section className="AddClothing">
-      <Link to="/feed"><button>DISCOVER A NEW LOOK</button></Link>
-                <Link to="/"><button>MY CLOSET</button></Link>
+   
+               
   
         <h2>ADD A CLOTHING ITEM</h2>
-
+       
         <form onSubmit={event => this.handleSubmit(event)}>
+      
           <label>
-            Type:
-            <input value={this.state.type}
+            {/* Type: */}
+            <Input label="TYPE" value={this.state.type}
                 onChange={event => this.genericSync(event)}
-                type="text" name="type" placeholder="Jeans" />
+                type="text" name="type" 
+                placeholder="Jeans"
+                 />
           </label>
 
             <label>
-            Link to item:
-            <input value={this.state.link}
+            {/* Link to item: */}
+            <Input label="LINK TO ITEM" value={this.state.link}
                 onChange={event => this.genericSync(event)}
                 type="text" name="link" placeholder="www.nordstrom.com/cute-jacket" />
           </label>
 
           <label>
-            Brand:
-            <input value={this.state.brand}
+            {/* Brand: */}
+            <Input label="LABEL" value={this.state.brand}
                 onChange={event => this.genericSync(event)}
                 type="text" name="brand" placeholder="Levi" />
           </label>
 
           <label>
-            Size:
-            <input value={this.state.size}
+            {/* Size: */}
+            <Input label="SIZE" value={this.state.size}
                 onChange={event => this.genericSync(event)}
                 type="text" name="size" placeholder="Medium" />
           </label>
 
           <label>
-            Price:
-            <input value={this.state.price}
+            {/* Price: */}
+            <Input label="PRICE" value={this.state.price}
                 onChange={event => this.genericSync(event)}
                 type="text" name="price" placeholder="31" />
           </label>
 
           <label>
-            Notes:
-            <input value={this.state.notes}
+            {/* Notes: */}
+            <Input label="NOTES" value={this.state.notes}
                 onChange={event => this.genericSync(event)}
                 type="text" name="notes" placeholder="I like the baggy fit." />
           </label>
 
          
           <label>
-            Image:
-            <input type="file" onChange={event => this.uploadImage(event)} />
+            {/* Image: */}
+            <Button> <input type="file" onChange={event => this.uploadImage(event)} /> </Button>
           </label>
           
            
         
 
-          <button>Save This Item</button>
+          <Button>SAVE THIS ITEM</Button>
         </form>
+      
       </section>
     );
   }

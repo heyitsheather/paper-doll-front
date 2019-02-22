@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
 import logo from "../images/hanger-line.png"
+import {Button} from "react-materialize";
 
 class LoginPage extends Component {
   constructor(props) {
@@ -53,21 +54,21 @@ class LoginPage extends Component {
           <form onSubmit={event => this.handleSubmit(event)}>
           <label>
             
-            <input value={this.state.email}
+            <input label="EMAIL" value={this.state.email}
                 onChange={event => this.genericSync(event)}
-                type="email" name="email" placeholder="EXAMPLE@PHOTOWARRIOR.COM" />
+                type="email" name="email" placeholder="EXAMPLE@PAPERDOLLS.COM" />
           </label>
 
           <label>
            
-            <input value={this.state.originalPassword}
+            <input label="PASSWORD" value={this.state.originalPassword}
                 onChange={event => this.genericSync(event)}
                 type="password" name="originalPassword" placeholder="PASSWORD" />
           </label>
 
-          <button>Log In</button>
+          <Button>Log In</Button>
         </form>
-        <Link to="/signup-page"><button>New? Signup Here.</button></Link>
+        <Link to="/signup-page"><Button>New? Signup Here.</Button></Link>
          
         </header>
         

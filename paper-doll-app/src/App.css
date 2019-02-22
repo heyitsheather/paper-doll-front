@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+ 
 }
 
 .App-logo {
@@ -18,5 +19,7 @@
   background-size: cover;
 }
 
+.panel {
+  background-color: 0}
 
 

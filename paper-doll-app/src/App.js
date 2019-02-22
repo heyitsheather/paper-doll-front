@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Switch, Route, NavLink, Redirect} from "react-router-dom";
+import { Switch, Link,  Route, Redirect} from "react-router-dom";
 import axios from "axios";
 import './App.css';
 import FeedPage from "./components/FeedPage.js"
@@ -13,6 +13,7 @@ import ClothingDetail from "./components/ClothingDetails.js";
 import ClothingList from "./components/CothingList.js";
 import Profile from "./components/UserProfile.js"
 import Details from "./components/modal.js";
+import {Navbar, NavItem} from "react-materialize";
 
 class App extends Component {
   constructor(props) {
@@ -67,24 +68,42 @@ class App extends Component {
 
       <div className="App">
 
-<header>
-        
+<section>
+          {this.state.currentUser ? (
+          <Navbar>
+              <NavItem onClick={() => this.logoutClick()}>
+                LOG OUT             
+              </NavItem>
 
-          <nav>
-            
-            {this.state.currentUser ? (
-              <span>
-                <button onClick={() => this.logoutClick()}>
-                  Log Out
-                </button>
-              </span>
+              <NavItem >
+              <Link to="/feed">
+                DISCOVER A NEW LOOK
+                </Link>
+              </NavItem>
+
+              <NavItem>
+              <Link to="/">
+                MY CLOSET
+                </Link>
+              </NavItem>
+
+              <NavItem>
+              <Link to="/add-clothing">
+                ADD A NEW ITEM
+                </Link>
+              </NavItem>
+              
+          </Navbar>
+
+
+
             ) : (
               <span>
-                <Redirect to="/login-page" />;
+                <Redirect to="/login-page" />
               </span>
             )}
-          </nav>
-        </header>
+        
+        </section>
       
        
       

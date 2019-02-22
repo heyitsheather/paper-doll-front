@@ -2,7 +2,7 @@ import React from 'react';
 import Gallery from 'react-photo-gallery';
 import axios from "axios";
 import Modal from 'react-awesome-modal';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 // import Link from "react"
 
 
@@ -104,12 +104,11 @@ openModal(event, obj) {
           
                <div>
 
- <Link to="/add-clothing"><button>ADD A NEW ITEM</button></Link>
-                <Link to="/"><button>MY CLOSET</button></Link>
+
 
                  <h1>THESE MIGHT LOOK GREAT ON YOU</h1>
                  
-        <Gallery photos={clothingArray} onClick={this.openModal} />
+        <Gallery photos={clothingArray} onClick={this.openModal} direction={"row"}/>
         {this.state.selectedClothingItem&& <Modal visible={this.state.selectedClothingItem} width="400" height="300" effect="fadeInUp" onClickAway={() => this.closeModal()}>
                     <div>
                         {/* <img src={this.state.selectedClothingItem.image}/> */}
