@@ -48,13 +48,13 @@ class UserDashboard extends React.Component {
                 height: oneClothing.height,
                 key: oneClothing._id,
                 id: oneClothing._id,
-                fullInfoKey: oneClothing,
-                // type:
-                // link:
-                // brand:
-                // price:
-                // image:
-                // notes:
+                // fullInfoKey: oneClothing,
+                type: oneClothing.type,
+                link: oneClothing.link,
+                brand:oneClothing.brand,
+                price: oneClothing.price,
+                image: oneClothing.image,
+                notes: oneClothing.notes,
               
 
               }
@@ -83,7 +83,7 @@ class UserDashboard extends React.Component {
     handleSubmit=(event)=> {
       // stop the page refresh
       event.preventDefault();
-      
+
       // PUT and POST requests receive a 2nd argument: the info to submit
       // (we are submitting the state we've gathered from the form)
       axios.put(
@@ -94,7 +94,8 @@ class UserDashboard extends React.Component {
       )
         .then(response => {
           console.log("updated clothing item", this.state);
-          this.setState({ isSubmitSuccessful: true });
+          this.setState({ isSubmitSuccessful: true, 
+             });
         })
         .catch(err => {
           console.log("UPDATE clothing ERROR", err);
@@ -112,12 +113,14 @@ class UserDashboard extends React.Component {
 openModal(event, obj) {
   let photos = this.state.clothingArray;
   photos[obj.index].selected = !photos[obj.index].selected;
-    console.log ("photosobj.index",photos[obj.index],obj)
+    console.log (this.state)
     this.setState({
+     
       currentImage: obj.index,
-      selectedClothingItem: photos[obj.index].fullInfoKey
+      selectedClothingItem: photos[obj.index]
     });
 }
+
 
     render() { 
       const {clothingArray}= this.state;
