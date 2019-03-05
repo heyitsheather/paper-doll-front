@@ -33,6 +33,7 @@ class FeedPage extends React.Component {
 
           const clothingArray =response.data.map ((oneClothing)=>{
             return{
+              itemOwner: oneClothing.itemOwner,
               src: oneClothing.image,
               width: oneClothing.width,
               height: oneClothing.height,
@@ -62,16 +63,7 @@ class FeedPage extends React.Component {
       lightboxIsOpen: false,
     });
   }
-  // gotoPrevious() {
-  //   this.setState({
-  //     currentImage: this.state.currentImage - 1,
-  //   });
-  // }
-  // gotoNext() {
-  //   this.setState({
-  //     currentImage: this.state.currentImage + 1,
-  //   });
-  // }
+ 
 
   closeModal(){
     this.setState({

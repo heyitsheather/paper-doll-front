@@ -9,6 +9,10 @@ class AddClothing extends Component {
 
     this.state = {
       itemOwner: "",
+      itemChest: "",
+      itemWaist: "",
+      itemHips: "",
+      itemInseam: "",
       type: "",
       link: "",
       brand: "",
