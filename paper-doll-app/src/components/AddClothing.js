@@ -8,6 +8,7 @@ class AddClothing extends Component {
     super(props);
 
     this.state = {
+      itemOwner: "",
       type: "",
       link: "",
       brand: "",
@@ -48,14 +49,6 @@ class AddClothing extends Component {
       alert("Sorry! Something went wrong.");
     });
   }
-
-  // syncSpecs(event, index) {
-  //   const { specs } = this.state;
-  //   // update the spec value at the given index
-  //   specs[index] = event.target.value;
-  //   // set the state with the updated specs array
-  //   this.setState({ specs });
-  // }
 
   handleSubmit(event) {
     // stop the page refresh
@@ -111,7 +104,7 @@ class AddClothing extends Component {
 
           <label>
             {/* Brand: */}
-            <Input label="LABEL" value={this.state.brand}
+            <Input label="BRAND" value={this.state.brand}
                 onChange={event => this.genericSync(event)}
                 type="text" name="brand" placeholder="Levi" />
           </label>

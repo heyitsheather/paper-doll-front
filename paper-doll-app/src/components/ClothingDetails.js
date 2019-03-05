@@ -1,14 +1,23 @@
 import React, { Component } from "react";
 import axios from "axios";
 // import Modal from "react-awesome-modal";
+import Button from "react-materialize";
 
 class ClothingDetails extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      // we need the initial "specs" array to avoid an error with ".map()"
-      visable: false
+      type: "",
+      link: "",
+      brand: "",
+      price: "",
+      image: "",
+      notes: "",
+      isSubmitSuccessful: false,
+      width: "",
+      height:"",
+      _id:"",
     };
   }
 
@@ -34,20 +43,61 @@ class ClothingDetails extends Component {
   }
 
   render() {
-    const { type, link, brand, price, image, notes, createdAt } = this.state;
+    const {  type, link, brand, price, notes  } = this.state;
     return (
-      <section className="ClothingDetails">
-       
-        <img src={image} alt={notes} />
+      <div>
+      <p>EDIT THIS ITEM</p>
 
-        <h3>{type}</h3>
-        <p>by: {brand}</p>
-        <p>find it here:  <i>{link}</i></p>
-        <b>${price}</b>
+      {/* change this to be a trash can icon */}
+      <Button>DELETE THIS ITEM</Button>
 
-        <p>Added on {createdAt}</p>
+<form onSubmit={this.handleSubmit}>
+<label>
+{/* Type: */}
+<input value={this.state.type}
+onChange={event => this.handleChange(event)}
+type="text" name="type" placeholder={type} />
+</label>
 
-      </section>
+<label>
+{/* Link to item: */}
+<input value={this.state.link}
+onChange={event => this.handleChange(event)}
+type="text" name="link" placeholder={link} />
+</label>
+
+<label> 
+{/* Brand: */}
+<input value={this.state.brand}
+onChange={event => this.handleChange(event)}
+type="text" name="brand" placeholder={brand} />
+</label>
+
+{/* <label>  */}
+{/* Size: */}
+{/* <input value={this.state.size}
+onChange={event => this.handleChange(event)}
+type="text" name="size" placeholder={size} />
+</label>  */}
+
+<label>
+{/* Price: */}
+<input value={this.state.price}
+onChange={event => this.handleChange(event)}
+type="text" name="price" placeholder={price} />
+</label> 
+
+<label>
+{/* Notes: */}
+<input value={this.state.notes}
+onChange={event => this.handleChange(event)}
+type="text" name="notes" placeholder={notes} />
+</label>
+
+<Button>UPDATE</Button>
+</form> 
+    
+  </div> 
     );
   }
 }
