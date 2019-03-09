@@ -25,7 +25,7 @@ class FeedPage extends React.Component {
     componentDidMount() {
      
       axios.get(
-        process.env.REACT_APP_SERVER_URL + "/api/clothing",
+        process.env.REACT_APP_SERVER_URL + "/api/matchclothing",
         { withCredentials: true }, // FORCE axios to send cookies across domains
       )
         .then(response => {
@@ -34,6 +34,7 @@ class FeedPage extends React.Component {
           const clothingArray =response.data.map ((oneClothing)=>{
             return{
               itemOwner: oneClothing.itemOwner,
+              size: oneClothing.size,
               src: oneClothing.image,
               width: oneClothing.width,
               height: oneClothing.height,
@@ -115,7 +116,7 @@ openModal(event, obj) {
                 </Modal>}
           </div>
         
-    ;
+    
   </section>
   );
 }

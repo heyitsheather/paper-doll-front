@@ -17,6 +17,7 @@ class AddClothing extends Component {
       link: "",
       brand: "",
       price: "",
+      size: "",
       image: "",
       notes: "",
       isSubmitSuccessful: false,

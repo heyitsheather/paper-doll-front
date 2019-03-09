@@ -57,6 +57,11 @@ class UserDashboard extends React.Component {
                 price: oneClothing.price,
                 image: oneClothing.image,
                 notes: oneClothing.notes,
+                itemOwner: oneClothing.itemOwner,
+                // itemChest: oneClothing.itemChest,
+                // itemWaist: oneClothing.itemWaist,
+                // itemHips: oneClothing.itemHips,
+                // itemInseam: oneClothing.itemInseam
               }
             })
   
@@ -177,6 +182,7 @@ openModal(event, obj) {
               
                 <h1>WELCOME TO YOUR CLOSET</h1>
           <div>
+            
                 <Gallery photos={clothingArray} columns={columns} onClick={this.openModal} 
                 // direction={"column"}
                 />
