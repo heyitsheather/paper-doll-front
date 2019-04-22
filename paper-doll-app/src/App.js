@@ -13,6 +13,7 @@ import ClothingDetail from "./components/ClothingDetails.js";
 import ClothingList from "./components/CothingList.js";
 import Profile from "./components/UserProfile.js"
 import Details from "./components/modal.js";
+import MyAccount from "./components/MyAccount.js";
 import {Navbar, NavItem} from "react-materialize";
 
 class App extends Component {
@@ -71,9 +72,6 @@ class App extends Component {
 <section>
           {this.state.currentUser ? (
           <Navbar>
-              <NavItem onClick={() => this.logoutClick()}>
-                LOG OUT             
-              </NavItem>
 
               <NavItem >
               <Link to="/feed">
@@ -91,6 +89,17 @@ class App extends Component {
               <Link to="/add-clothing">
                 ADD A NEW ITEM
                 </Link>
+              </NavItem>
+
+              <NavItem >
+              <Link to="/my-account">
+                MY ACCOUNT
+                </Link>
+              </NavItem>
+
+
+              <NavItem onClick={() => this.logoutClick()}>
+                LOG OUT             
               </NavItem>
               
           </Navbar>
@@ -111,6 +120,7 @@ class App extends Component {
           <Route exact path="/" component={UserDashboard} />
           <Route path="/feed" component={FeedPage} />
           <Route path="/add-clothing" component={AddClothing} />
+          <Route path="/my-account" component={MyAccount} />
           <Route path="/clothing-detail" component={ClothingDetail} />
           <Route path="/user-dashboard" component={UserDashboard}/>
           <Route path="/user-profile" component={Profile}/>
