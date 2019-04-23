@@ -38,7 +38,7 @@ class ClothingDetails extends Component {
       })
       .catch(err => {
         console.log("Clothing Details ERROR", err);
-        alert("Sorry! Something went wrong.");
+        // alert("Sorry! Something went wrong.");
       });
   }
 

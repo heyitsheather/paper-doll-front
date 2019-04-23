@@ -51,7 +51,7 @@ class FeedPage extends React.Component {
         
         .catch(err => {
           console.log("Clothing List ERROR", err);
-          alert("Sorry! Something went wrong.");
+          // alert("Sorry! Something went wrong.");
         });
 
   }

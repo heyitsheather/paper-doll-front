@@ -73,7 +73,7 @@ class UserDashboard extends React.Component {
           
           .catch(err => {
             console.log("Clothing List ERROR", err);
-            alert("Sorry! Something went wrong.");
+            // alert("Sorry! Something went wrong.");
           });
   
     }
@@ -108,7 +108,7 @@ class UserDashboard extends React.Component {
         })
         .catch(err => {
           console.log("UPDATE clothing ERROR", err);
-          alert("Sorry! Something went wrong.");
+          // alert("Sorry! Something went wrong.");
          });
     }
 
@@ -126,7 +126,7 @@ class UserDashboard extends React.Component {
       })
       .catch(err => {
         console.log("delete clothing ERROR", err);
-        alert("Sorry! Something went wrong.");
+        // alert("Sorry! Something went wrong.");
        });
     }
 

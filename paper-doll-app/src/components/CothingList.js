@@ -30,7 +30,7 @@ class ClothingList extends Component {
       })
       .catch(err => {
         console.log("clothing List ERROR", err);
-        alert("Sorry! Something went wrong.");
+        // alert("Sorry! Something went wrong.");
       });
   }
 

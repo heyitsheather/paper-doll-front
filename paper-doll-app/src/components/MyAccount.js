@@ -57,7 +57,7 @@ class MyAccount extends Component {
         
         .catch(err => {
           console.log("User Details ERROR", err);
-          alert("Sorry! Something went wrong.");
+          // alert("Sorry! Something went wrong.");
         });
 
   }
@@ -120,7 +120,7 @@ handleSubmit=(event)=> {
       })
       .catch(err => {
         console.log("UPDATE clothing ERROR", err);
-        alert("Sorry! Something went wrong.");
+        // alert("Sorry! Something went wrong.");
        });
   }
 

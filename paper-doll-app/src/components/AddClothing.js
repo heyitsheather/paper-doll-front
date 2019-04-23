@@ -51,7 +51,7 @@ class AddClothing extends Component {
     })
     .catch(err => {
       console.log("Upload Image ERROR", err);
-      alert("Sorry! Something went wrong.");
+      // alert("Sorry! Something went wrong.");
     });
   }
 
@@ -72,7 +72,7 @@ class AddClothing extends Component {
       })
       .catch(err => {
         console.log("Add clothing ERROR", err);
-        alert("Sorry! Something went wrong.");
+        // alert("Sorry! Something went wrong.");
       });
   }
 

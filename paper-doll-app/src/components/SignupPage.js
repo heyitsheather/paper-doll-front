@@ -37,7 +37,7 @@ class SignupPage extends Component {
       })
       .catch(err => {
         console.log("Signup Page ERROR", err);
-        alert("Sorry! Something went wrong.");
+        // alert("Sorry! Something went wrong.");
       });
   }
 
