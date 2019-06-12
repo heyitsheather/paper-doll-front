@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Switch, Link,  Route, Redirect} from "react-router-dom";
 import axios from "axios";
 import './App.css';
+import {Navbar, NavItem} from "react-materialize";
 import FeedPage from "./components/FeedPage.js"
 import NotFound from "./components/NotFound.js";
 import UserDashboard from "./components/UserDashboard";
@@ -12,9 +13,9 @@ import AddClothing from "./components/AddClothing.js";
 import ClothingDetail from "./components/ClothingDetails.js";
 import ClothingList from "./components/CothingList.js";
 import Profile from "./components/UserProfile.js"
-import Details from "./components/modal.js";
 import MyAccount from "./components/MyAccount.js";
-import {Navbar, NavItem} from "react-materialize";
+import UpdateMeasurements from "./components/UpdateMeasurements.js";
+
 
 class App extends Component {
   constructor(props) {
@@ -65,41 +66,42 @@ class App extends Component {
   }
 
   render() {
+
+    
     return (
 
       <div className="App">
 
 <section>
           {this.state.currentUser ? (
-          <Navbar>
+          <Navbar class="navbar">
 
               <NavItem >
               <Link to="/feed">
-                DISCOVER A NEW LOOK
-                </Link>
-              </NavItem>
-
-              <NavItem>
-              <Link to="/">
-                MY CLOSET
+              <img class="icon" alt= "add"
+                      src= "/images/hanger-line.png"/>
                 </Link>
               </NavItem>
 
               <NavItem>
               <Link to="/add-clothing">
-                ADD A NEW ITEM
+              <img class="icon" alt= "add"
+                      src= "/images/plus.png"/>
                 </Link>
               </NavItem>
 
               <NavItem >
-              <Link to="/my-account">
-                MY ACCOUNT
+              <Link to="/">
+                <img class="icon" alt= "account"
+                      src= "/images/user.png"/>
                 </Link>
               </NavItem>
 
 
               <NavItem onClick={() => this.logoutClick()}>
-                LOG OUT             
+                <Link to="">
+              <img class="icon" alt= "logout"
+                      src= "/images/logout.png"/> </Link>           
               </NavItem>
               
           </Navbar>
@@ -125,7 +127,7 @@ class App extends Component {
           <Route path="/user-dashboard" component={UserDashboard}/>
           <Route path="/user-profile" component={Profile}/>
           <Route path="/clothing-list" component={ClothingList}/>
-          <Route path="/modal" component={Details}/>
+          <Route path="/update-measurements" component={UpdateMeasurements}/>
           {/* Use "render" instead of "component" to pass props */}
           <Route path="/signup-page" render={() =>
             <SignupPage currentUser={this.state.currentUser}
@@ -141,6 +143,8 @@ class App extends Component {
         </Switch>
 
       </div>
+
+      
     );
   }
 }

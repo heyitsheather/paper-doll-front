@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Redirect} from 'react';
 import Gallery from 'react-photo-gallery';
 import axios from "axios";
 import Modal from 'react-awesome-modal';
@@ -90,31 +90,47 @@ openModal(event, obj) {
 
   render() {
     const {clothingArray}= this.state;
+
+    function columns(containerWidth) {
+      let columns = 1;
+      if (containerWidth >= 500) columns = 2;
+      if (containerWidth >= 900) columns = 3;
+      if (containerWidth >= 1500) columns = 4;
+      return columns;
+    }
+
+    if (this.state.isSubmitSuccessful) {
+      // redirect back to the user dashboard if the form submission worked
+      return <Redirect to="/feed" />
+    }
     
     return(
           
         <section className= "clothingFeed">
           
-               <div>
-
-
-
                  <h1>THESE MIGHT LOOK GREAT ON YOU</h1>
-                 
-        <Gallery photos={clothingArray} onClick={this.openModal} direction={"row"}/>
-        {this.state.selectedClothingItem&& <Modal visible={this.state.selectedClothingItem} width="400" height="300" effect="fadeInUp" onClickAway={() => this.closeModal()}>
+
+        <div>
+
+        <Gallery photos={clothingArray} columns= {columns} onClick={this.openModal} />
+        </div>
+        {this.state.selectedClothingItem&& 
+        <Modal visible={this.state.selectedClothingItem} width="400" height="300" effect="fadeInUp" onClickAway={() => this.closeModal()}>
                     <div>
                         {/* <img src={this.state.selectedClothingItem.image}/> */}
-                        <h1>{this.state.selectedClothingItem.brand} {this.state.selectedClothingItem.type}</h1>
-                        {/* <Link>{this.state.selectedClothingItem.link}link</Link> */}
+                        <h2>{this.state.selectedClothingItem.brand} </h2>
+
+                        <h3>{this.state.selectedClothingItem.type}</h3>
+                       
                         <p>{this.state.selectedClothingItem.size}</p>
                         <p>{this.state.selectedClothingItem.notes}</p>
+                        {/* <p>{this.state.selectedClothingItem.price}</p> */}
                         {/* <p>VIEW MORE FROM THIS CLOSET</p> */}
                         <a href={this.state.selectedClothingItem.link}>FIND IT HERE</a>
                         {/* <a href="javascript:void(0);" onClick={() => this.closeModal()}>Close</a> */}
                     </div>
                 </Modal>}
-          </div>
+         
         
     
   </section>

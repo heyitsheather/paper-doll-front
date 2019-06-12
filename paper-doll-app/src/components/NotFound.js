@@ -9,7 +9,7 @@ class NotFound extends Component {
     render() { 
         return ( 
             <div>
-                Feed goes here.
+                oh noooooo 404 
             </div>
          );
     }

@@ -1,5 +1,5 @@
 import React, {Redirect} from 'react';
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Gallery from "react-photo-gallery";
 import axios from "axios";
 import Modal from "react-awesome-modal";
@@ -50,7 +50,6 @@ class UserDashboard extends React.Component {
                 height: oneClothing.height,
                 key: oneClothing._id,
                 _id: oneClothing._id,
-                // fullInfoKey: oneClothing,
                 type: oneClothing.type,
                 link: oneClothing.link,
                 brand:oneClothing.brand,
@@ -58,10 +57,7 @@ class UserDashboard extends React.Component {
                 image: oneClothing.image,
                 notes: oneClothing.notes,
                 itemOwner: oneClothing.itemOwner,
-                // itemChest: oneClothing.itemChest,
-                // itemWaist: oneClothing.itemWaist,
-                // itemHips: oneClothing.itemHips,
-                // itemInseam: oneClothing.itemInseam
+                
               }
             })
   
@@ -73,7 +69,6 @@ class UserDashboard extends React.Component {
           
           .catch(err => {
             console.log("Clothing List ERROR", err);
-            // alert("Sorry! Something went wrong.");
           });
   
     }
@@ -108,7 +103,6 @@ class UserDashboard extends React.Component {
         })
         .catch(err => {
           console.log("UPDATE clothing ERROR", err);
-          // alert("Sorry! Something went wrong.");
          });
     }
 
@@ -126,7 +120,7 @@ class UserDashboard extends React.Component {
       })
       .catch(err => {
         console.log("delete clothing ERROR", err);
-        // alert("Sorry! Something went wrong.");
+
        });
     }
 
@@ -145,7 +139,7 @@ openModal(event, obj) {
       currentImage: obj.index,
       selectedClothingItem: photos[obj.index], 
     });
-    // this.setState({ photoArray: photos });
+  
     console.log ("modal was opened", this.state)
 
 }
@@ -162,14 +156,6 @@ openModal(event, obj) {
         if (containerWidth >= 1500) columns = 4;
         return columns;
       }
-     
-      // const ExampleDynamicColumns = () => {
-      //   return (
-      //     <div>
-      //       <Gallery photos={clothingArray} columns={columns} onClick={this.openModal} />
-      //     </div>
-      //   );
-      // };
 
       if (this.state.isSubmitSuccessful) {
         // redirect back to the user dashboard if the form submission worked
@@ -180,21 +166,34 @@ openModal(event, obj) {
           
             <section>
               
-                <h1>WELCOME TO YOUR CLOSET</h1>
+              <img class="header" alt= "header"
+              src="images/clothingheader.jpg"/>
+            
+             
+              
+
+                {/* avatar photo */}
+                <img class="avatar" alt= "avatar"
+                      src= "/images/heyitsheadshot.jpg"/>
+                       <h3>HELLO HEATHER</h3>
+
+                <Button>
+                <Link to="/my-account">MY ACCOUNT</Link>
+                </Button>
           <div>
             
-                <Gallery photos={clothingArray} columns={columns} onClick={this.openModal} 
-                // direction={"column"}
+                <Gallery class="gallery" photos={clothingArray} columns={columns} onClick={this.openModal} 
+          
                 />
                 </div>
         {this.state.selectedClothingItem&& 
         <Modal visible={this.state.selectedClothingItem}  width="400" height="470" effect="fadeInUp" onClickAway={() => this.closeModal()}>
                     <div>
                         <p>EDIT THIS ITEM</p>
-
-                        {/* change this to be a trash can icon */}
-                        <Button onClick={this.handleDelete}>DELETE THIS ITEM</Button>
-
+                        
+                          <img onClick={this.handleDelete} class= "trash" alt= "trash"
+                      src= "/images/garbage.png"/>
+                    
           <form onSubmit={this.handleSubmit}>
           <label>
             {/* Type: */}
@@ -217,13 +216,6 @@ openModal(event, obj) {
                 type="text" name="brand" placeholder={this.state.selectedClothingItem.brand} />
           </label>
 
-          {/* <label>  */}
-            {/* Size: */}
-            {/* <input value={this.state.size}
-                onChange={event => this.handleChange(event)}
-                type="text" name="size" placeholder={this.state.selectedClothingItem.size} />
-          </label>  */}
-
           <label>
             {/* Price: */}
             <input value={this.state.editFormItem.price}
@@ -238,7 +230,7 @@ openModal(event, obj) {
                 type="text" name="notes" placeholder={this.state.selectedClothingItem.notes} />
           </label>
 
-          <Button>UPDATE</Button>
+          <Button>SAVE</Button>
         </form> 
                       
                     </div> 

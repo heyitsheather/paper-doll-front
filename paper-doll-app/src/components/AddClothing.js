@@ -67,7 +67,7 @@ class AddClothing extends Component {
       { withCredentials: true }, // FORCE axios to send cookies across domains
     )
       .then(response => {
-        console.log("Add clothing item", response.data);
+        console.log("Added clothing item", response.data);
         this.setState({ isSubmitSuccessful: true });
       })
       .catch(err => {

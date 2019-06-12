@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Redirect, } from "react-router-dom";
-import {Input, Button} from "react-materialize";
+import { Redirect, Link} from "react-router-dom";
+import { Button} from "react-materialize";
+// import Modal from 'react-awesome-modal';
+
+
+
 
 class MyAccount extends Component {
   constructor(props) {
@@ -74,6 +78,24 @@ class MyAccount extends Component {
     this.setState({ editFormItem: form });
   }
 
+  logoutClick() {
+    axios.delete(
+      process.env.REACT_APP_SERVER_URL + "/api/logout",
+      { withCredentials: true }, // FORCE axios to send cookies across domains
+    )
+    .then(() => {
+      // make "currentUser" empty again (like it was at the start)
+      this.syncCurrentUser(null);
+     
+    })
+    .catch(err => {
+      console.log("Logout ERROR", err);
+      // alert("Sorry! Something went wrong.");
+    });
+  }
+  
+  
+
   // // upload avatar
 //   uploadImage(event) {
 //     const { files } = event.target;
@@ -131,60 +153,20 @@ handleSubmit=(event)=> {
     }
 
     return (
-      <section className="MyAccount">
-   
-               
+      <section class="MyAccount">
+
+      
   
-        <h2>EDIT YOUR ACCOUNT DETAILS</h2>
-       
-       v
-          <form onSubmit={this.handleSubmit}>
-          <label>
-            {/* Full Name */}
-            <Input value={this.state.fullName}
-                onChange={event => this.handleChange(event)}
-                type="text" name="fullName" placeholder={this.state.fullName} />
-          </label>
-
-            <label>
-            {/* Email */}
-           <Input value={this.state.email}
-                onChange={event => this.handleChange(event)}
-                type="text" name="email" placeholder={this.state.email} />
-          </label>
-
-          <label> 
-            {/* Chest */}
-            <Input value={this.state.chest}
-                onChange={event => this.handleChange(event)}
-                type="text" name="chest" placeholder={this.state.chest} />
-          </label>
-
-          <label>
-            {/* waist */}
-            <Input value={this.state.waist}
-                onChange={event => this.handleChange(event)}
-                type="text" name="waist" placeholder={this.state.waist} />
-          </label> 
-
-          <label>
-            {/* hips: */}
-            <Input value={this.state.hips}
-                onChange={event => this.handleChange(event)}
-                type="text" name="hips" placeholder={this.state.hips} />
-          </label>
-
-          <label>
-            {/* inseam */}
-            <Input value={this.state.inseam}
-                onChange={event => this.handleChange(event)}
-                type="text" name="inseam" placeholder={this.state.inseam} />
-          </label>
-
-          <Button>UPDATE</Button>
-        </form> 
+        <h2>MY ACCOUNT</h2>
+  
+        
+          <Button>CHANGE AVATAR</Button>
+          <Button>ACCOUNT SETTINGS</Button>
+          <Button><Link to="/update-measurements">UPDATE MY MEASUREMENTS</Link></Button>
+          {/* <Button onClick={() => this.logoutClick()}>LOGOUT</Button> */}
 
       </section>
+      
     );
   }
 }

@@ -94,7 +94,7 @@ onChange={event => this.handleChange(event)}
 type="text" name="notes" placeholder={notes} />
 </label>
 
-<Button>UPDATE</Button>
+<Button>SAVE</Button>
 </form> 
     
   </div> 
