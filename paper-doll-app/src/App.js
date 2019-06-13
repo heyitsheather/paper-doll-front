@@ -12,9 +12,9 @@ import LoginPage from "./components/LoginPage.js";
 import AddClothing from "./components/AddClothing.js";
 import ClothingDetail from "./components/ClothingDetails.js";
 import ClothingList from "./components/CothingList.js";
-import Profile from "./components/UserProfile.js"
 import MyAccount from "./components/MyAccount.js";
 import UpdateMeasurements from "./components/UpdateMeasurements.js";
+import LandingPage from "./components/LandingPage.js";
 
 
 class App extends Component {
@@ -120,12 +120,12 @@ class App extends Component {
       
         <Switch>
           <Route exact path="/" component={UserDashboard} />
+          <Route path="/landing-page" component={LandingPage} />
           <Route path="/feed" component={FeedPage} />
           <Route path="/add-clothing" component={AddClothing} />
           <Route path="/my-account" component={MyAccount} />
           <Route path="/clothing-detail" component={ClothingDetail} />
           <Route path="/user-dashboard" component={UserDashboard}/>
-          <Route path="/user-profile" component={Profile}/>
           <Route path="/clothing-list" component={ClothingList}/>
           <Route path="/update-measurements" component={UpdateMeasurements}/>
           {/* Use "render" instead of "component" to pass props */}

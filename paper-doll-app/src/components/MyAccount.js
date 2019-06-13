@@ -153,19 +153,29 @@ handleSubmit=(event)=> {
     }
 
     return (
+      <header class="App-header">
       <section class="MyAccount">
-
-      
-  
-        <h2>MY ACCOUNT</h2>
-  
         
+      <Link to="/"><img class="icon" alt= "back"
+                      src= "/images/backarrow.png"/></Link>
+
+        <img class="avatar" alt= "avatar"
+                      src= "/images/heyitsheadshot.jpg"/>
+
           <Button>CHANGE AVATAR</Button>
-          <Button>ACCOUNT SETTINGS</Button>
-          <Button><Link to="/update-measurements">UPDATE MY MEASUREMENTS</Link></Button>
-          {/* <Button onClick={() => this.logoutClick()}>LOGOUT</Button> */}
+          {/* <Button>ACCOUNT SETTINGS</Button> */}
+
+              <Link to="/update-measurements">
+              <Button> UPDATE MEASUREMENTS</Button>
+                </Link>
+              
+         
+          <Button onClick={() => this.logoutClick()}>LOG OUT
+          </Button>
+
 
       </section>
+      </header>
       
     );
   }

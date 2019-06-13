@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
-import logo from "../images/hanger-line.png"
+// import logo from "../images/hanger-line.png"
 import {Button} from "react-materialize";
 
 class LoginPage extends Component {
@@ -46,10 +46,11 @@ class LoginPage extends Component {
     }
 
     return (
-      <section className="LoginPage">
+     
         <header className="App-header">
-        <h1>PAPER DOLLS</h1>
-          <img src={logo} className="App-logo" alt="logo" />
+        
+        <img class="app-logo" alt= "header"
+              src="images/pdlogowhite2.png"/>
           
           <form onSubmit={event => this.handleSubmit(event)}>
           <label>
@@ -73,7 +74,7 @@ class LoginPage extends Component {
         </header>
         
        
-      </section>
+   
     );
   }
 }

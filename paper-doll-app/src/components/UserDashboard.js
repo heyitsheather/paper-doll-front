@@ -164,22 +164,20 @@ openModal(event, obj) {
 
         return ( 
           
-            <section>
+            <section className= "blah">
               
-              <img class="header" alt= "header"
-              src="images/clothingheader.jpg"/>
+              <Link to="/my-account"> <img class="icon" alt= "settings"
+                      src= "/images/settings-green.png"/></Link>
             
-             
-              
 
                 {/* avatar photo */}
                 <img class="avatar" alt= "avatar"
                       src= "/images/heyitsheadshot.jpg"/>
-                       <h3>HELLO HEATHER</h3>
 
-                <Button>
-                <Link to="/my-account">MY ACCOUNT</Link>
-                </Button>
+                
+                <Link to="/add-clothing"><img class="icon" alt= "add"
+                      src= "/images/plus-green.png"/></Link>
+                
           <div>
             
                 <Gallery class="gallery" photos={clothingArray} columns={columns} onClick={this.openModal} 

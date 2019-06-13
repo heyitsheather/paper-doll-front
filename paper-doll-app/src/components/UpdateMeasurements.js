@@ -1,9 +1,10 @@
 import React, {Component, Redirect} from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import {Input, Button} from "react-materialize";
 
 
-class UpdateMeasurements extends Component {
+class UpdateMeasurements extends React.Component {
   constructor(props) {
       super(props);
 
@@ -90,53 +91,60 @@ class UpdateMeasurements extends Component {
 
     const {chest, waist, hips, inseam} = this.state;
     return (
-      <div>
-      <p>UPDATE MEASUREMENTS</p>
+      <header className="App-header">
+      {/* <p>UPDATE MEASUREMENTS</p> */}
 
-<form onSubmit={this.handleSubmit}>
- <label>  
-            <h3>CHEST</h3> 
-            <p>Measure under your armpits, around your shoulder blades,
- and over the fullest part of your bust. Don’t pull the tape measure too hard.</p>
-            <Input value={this.state.chest}
+<form class="form" onSubmit={this.handleSubmit}>
+
+<Link to="/my-account"><img class="icon" alt= "back"
+                      src= "/images/backarrow.png"/></Link>
+  
+ <label>   
+            {/* <p>Measure under your armpits, around your shoulder blades,
+ and over the fullest part of your bust. Don’t pull the tape measure too hard.</p> */}
+            <Input label="CHEST" value={this.state.chest}
                 onChange={event => this.handleChange(event)}
                 type="text" name="chest" placeholder={chest} />
           </label>
 
           <label>
-          <h3>WAIST</h3> 
-          <p>Measure around your natural waistline. This is the narrow part of your waist, 
-about an inch above your navel. Relax and breath out before you measure.</p>
+          
+          {/* <p>Measure around your natural waistline. This is the narrow part of your waist, 
+about an inch above your navel. Relax and breath out before you measure.</p> */}
 
-            <Input value={this.state.waist}
+            <Input label="WAIST" value={this.state.waist}
                 onChange={event => this.handleChange(event)}
                 type="text" name="waist" placeholder={waist} />
           </label> 
 
           <label> 
-          <h3>HIP</h3> 
-          <p>The hip should be measured around its fullest part (about 8 inch. below your waist).</p>
-            <Input value={this.state.hips}
+          
+          {/* <p>The hip should be measured around its fullest part (about 8 inch. below your waist).</p> */}
+            <Input label="HIP" value={this.state.hips}
                 onChange={event => this.handleChange(event)}
                 type="text" name="hips" placeholder={hips} />
           </label>
 
           <label>
-          <h3>INSEAM</h3> 
-          <p>This is the measurement from your ankle to your groin, when you stand with your legs straight.
- If possible, ask a friend to help you. This can also be measured on a pair of pants with the proper length.</p>
-            <Input value={this.state.inseam}
+          
+          {/* <p>This is the measurement from your ankle to your groin, when you stand with your legs straight.
+ If possible, ask a friend to help you. This can also be measured on a pair of pants with the proper length.</p> */}
+            <Input label="INSEAM" value={this.state.inseam}
                 onChange={event => this.handleChange(event)}
-                type="text" name="inseam" placeholder={inseam} />
+                type="text" name="inseam" placeholder={inseam}/>
           </label> 
 
 <Button>SAVE</Button>
 </form> 
     
-  </div> 
+  </header> 
+  
     );
+    
   }
 }
+
+
 
 export default UpdateMeasurements;   
 

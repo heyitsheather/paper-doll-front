@@ -52,10 +52,10 @@ class SignupPage extends Component {
     }
 
     return (
-      <section className="SignupPage">
+      <section className="App-header">
         <h2>Sign Up</h2>
 
-        <form onSubmit={event => this.handleSubmit(event)}>
+        <form class="form" onSubmit={event => this.handleSubmit(event)}>
           <label>
             Full Name:
             <input value={this.state.fullName}

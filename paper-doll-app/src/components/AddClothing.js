@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Redirect, } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import {Input, Button} from "react-materialize";
 
 class AddClothing extends Component {
@@ -83,20 +83,23 @@ class AddClothing extends Component {
     }
 
     return (
-      <section className="AddClothing">
+      <section className="App-header">
    
                
-  
-        <h2>ADD A CLOTHING ITEM</h2>
+{/*   
+        <h2>ADD A CLOTHING ITEM</h2> */}
+
+
        
-        <form onSubmit={event => this.handleSubmit(event)}>
-      
+        <form class="form" onSubmit={event => this.handleSubmit(event)}>
+        <Link to="/"><img class="icon" alt= "back"
+                      src= "/images/backarrow.png"/></Link>
           <label>
             {/* Type: */}
-            <Input label="TYPE" value={this.state.type}
+            <Input label="CLOTHING ITEM TYPE" value={this.state.type}
                 onChange={event => this.genericSync(event)}
                 type="text" name="type" 
-                placeholder="Jeans"
+                
                  />
           </label>
 
@@ -104,35 +107,35 @@ class AddClothing extends Component {
             {/* Link to item: */}
             <Input label="LINK TO ITEM" value={this.state.link}
                 onChange={event => this.genericSync(event)}
-                type="text" name="link" placeholder="www.nordstrom.com/cute-jacket" />
+                type="text" name="link" />
           </label>
 
           <label>
             {/* Brand: */}
             <Input label="BRAND" value={this.state.brand}
                 onChange={event => this.genericSync(event)}
-                type="text" name="brand" placeholder="Levi" />
+                type="text" name="brand"  />
           </label>
 
           <label>
             {/* Size: */}
             <Input label="SIZE" value={this.state.size}
                 onChange={event => this.genericSync(event)}
-                type="text" name="size" placeholder="Medium" />
+                type="text" name="size" />
           </label>
 
           <label>
             {/* Price: */}
             <Input label="PRICE" value={this.state.price}
                 onChange={event => this.genericSync(event)}
-                type="text" name="price" placeholder="31" />
+                type="text" name="price"  />
           </label>
 
           <label>
             {/* Notes: */}
             <Input label="NOTES" value={this.state.notes}
                 onChange={event => this.genericSync(event)}
-                type="text" name="notes" placeholder="I like the baggy fit." />
+                type="text" name="notes"  />
           </label>
 
          
