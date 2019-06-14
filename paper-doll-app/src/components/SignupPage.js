@@ -77,6 +77,9 @@ class SignupPage extends Component {
                 type="password" name="originalPassword" placeholder="*********" />
           </label>
 
+          
+
+
           <label>
             Chest:
             <input value={this.state.chest}

@@ -165,25 +165,22 @@ openModal(event, obj) {
         return ( 
           
             <section className= "blah">
-              
-              <Link to="/my-account"> <img class="icon" alt= "settings"
-                      src= "/images/settings-green.png"/></Link>
-            
-
-                {/* avatar photo */}
-                <img class="avatar" alt= "avatar"
-                      src= "/images/heyitsheadshot.jpg"/>
+              <div class="navigation">
+              <Link to="/feed"> <img class="icon" alt= "back"
+                      src= "/images/white-back-button.png"/></Link>
+                      PROFILE
+              <Link to="/my-account"> <img class="icon" alt= "back"
+                      src= "/images/settings-white.png"/></Link>
+              </div>
 
                 
-                <Link to="/add-clothing"><img class="icon" alt= "add"
+                <Link to="/add-clothing"><img class="addicon" alt= "add"
                       src= "/images/plus-green.png"/></Link>
                 
-          <div>
-            
-                <Gallery class="gallery" photos={clothingArray} columns={columns} onClick={this.openModal} 
-          
-                />
+              <div>
+                <Gallery photos={clothingArray} columns={columns} onClick={this.openModal}/>
                 </div>
+
         {this.state.selectedClothingItem&& 
         <Modal visible={this.state.selectedClothingItem}  width="400" height="470" effect="fadeInUp" onClickAway={() => this.closeModal()}>
                     <div>
@@ -192,7 +189,7 @@ openModal(event, obj) {
                           <img onClick={this.handleDelete} class= "trash" alt= "trash"
                       src= "/images/garbage.png"/>
                     
-          <form onSubmit={this.handleSubmit}>
+          <form class="form" onSubmit={this.handleSubmit}>
           <label>
             {/* Type: */}
             <input value={this.state.editFormItem.type}

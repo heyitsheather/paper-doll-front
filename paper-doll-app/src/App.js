@@ -15,6 +15,7 @@ import ClothingList from "./components/CothingList.js";
 import MyAccount from "./components/MyAccount.js";
 import UpdateMeasurements from "./components/UpdateMeasurements.js";
 import LandingPage from "./components/LandingPage.js";
+import HowToMeasure from "./components/HowToMeasure.js";
 
 
 class App extends Component {
@@ -74,37 +75,38 @@ class App extends Component {
 
 <section>
           {this.state.currentUser ? (
-          <Navbar class="navbar">
+            <div></div>
+          // <Navbar class="navbar">
 
-              <NavItem >
-              <Link to="/feed">
-              <img class="icon" alt= "add"
-                      src= "/images/hanger-line.png"/>
-                </Link>
-              </NavItem>
+          //     <NavItem >
+          //     <Link to="/feed">
+          //     <img class="icon" alt= "add"
+          //             src= "/images/hanger-line.png"/>
+          //       </Link>
+          //     </NavItem>
 
-              <NavItem>
-              <Link to="/add-clothing">
-              <img class="icon" alt= "add"
-                      src= "/images/plus.png"/>
-                </Link>
-              </NavItem>
+          //     <NavItem>
+          //     <Link to="/add-clothing">
+          //     <img class="icon" alt= "add"
+          //             src= "/images/plus.png"/>
+          //       </Link>
+          //     </NavItem>
 
-              <NavItem >
-              <Link to="/">
-                <img class="icon" alt= "account"
-                      src= "/images/user.png"/>
-                </Link>
-              </NavItem>
+          //     <NavItem >
+          //     <Link to="/">
+          //       <img class="icon" alt= "account"
+          //             src= "/images/user.png"/>
+          //       </Link>
+          //     </NavItem>
 
 
-              <NavItem onClick={() => this.logoutClick()}>
-                <Link to="">
-              <img class="icon" alt= "logout"
-                      src= "/images/logout.png"/> </Link>           
-              </NavItem>
+          //     <NavItem onClick={() => this.logoutClick()}>
+          //       <Link to="">
+          //     <img class="icon" alt= "logout"
+          //             src= "/images/logout.png"/> </Link>           
+          //     </NavItem>
               
-          </Navbar>
+          // </Navbar>
 
 
 
@@ -128,6 +130,7 @@ class App extends Component {
           <Route path="/user-dashboard" component={UserDashboard}/>
           <Route path="/clothing-list" component={ClothingList}/>
           <Route path="/update-measurements" component={UpdateMeasurements}/>
+          <Route path="/how-to-measure" component={HowToMeasure}/>
           {/* Use "render" instead of "component" to pass props */}
           <Route path="/signup-page" render={() =>
             <SignupPage currentUser={this.state.currentUser}

@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   background-color: black;
+  color:white;
   
 }
 
@@ -43,22 +44,28 @@
 }
 
 .icon {
-  width: 30px;
+  height: 30px;
 }
 
 .avatar {
   width: 200px;
   height: 200px;
   background-size: cover;
-  /* display: block; */
+  /* display: flex; */
   border-radius: 100px;
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
-  /* margin-top: -50px; */
-  background-color: #48A69A;
+  margin-top: 10px;
+  /* background-color: #48A69A; */
   border-radius: 50%;
-  box-shadow: 0 0 0 5px #48A69A;
+  /* box-shadow: 0 0 0 5px #48A69A; */
   position: relative;
+  height: 40px;
+  width: 40px;
+  /* justify-content: right; */
+  
+
+  
   
 }
 
@@ -76,9 +83,53 @@
 }
 
 .form {
-  width:450px;
+  width:350px;
   padding-top: 100px;
   padding-bottom: 100px;
   
 }
 
+.info {
+  background-color: #48A69A;
+  color: white;
+}
+
+.upload{
+  border-style: solid;
+  border-color: #9E9E9E;
+  border-width: 1px;
+
+}
+
+.down{
+  width: 40px;
+}
+
+.profilegallery{
+  background-color: white;
+   margin-top: -35px;
+   margin-left:20px;
+   margin-right: 20px;
+
+}
+
+.navigation{
+  background: linear-gradient( rgba(0, 0, 0, .035), rgba(0, 0, 0, 1) ), url("/images/heyitsheadshot.jpg");
+  min-height:  75vh;
+  background-size: cover;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+ 
+}
+
+.addicon{
+  height: 60px;
+  margin-top: -30px;
+}
+
+.loginpage{
+  padding-bottom: 100px;
+}

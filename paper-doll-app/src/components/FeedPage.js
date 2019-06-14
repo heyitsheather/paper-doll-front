@@ -2,7 +2,7 @@ import React, {Redirect} from 'react';
 import Gallery from 'react-photo-gallery';
 import axios from "axios";
 import Modal from 'react-awesome-modal';
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import Link from "react"
 
 
@@ -106,16 +106,34 @@ openModal(event, obj) {
     
     return(
           
-        <section className= "clothingFeed">
-          
-                 <h1>THESE MIGHT LOOK GREAT ON YOU</h1>
+      <section className= "clothingFeed">
+
+<Link to="/user-dashboard">
+<img class="avatar" alt= "avatar to settings" src= "/images/heyitsheadshot.jpg"/>
+</Link>
+        <header className= "App-header">
+
+          {/* <Link to="/user-dashboard"> */}
+          {/* <img class="avatar" alt= "avatar to settings" src= "/images/heyitsheadshot.jpg"/> */}
+          {/* </Link> */}
+
+          <div>
+          <h3>HELLO, HEATHER</h3>
+          <p>WE THINK THESE MAY LOOK GREAT ON YOU</p>
+          </div>
+
+          <div class= "scrolldown">
+            <p>SCROLL DOWN</p>
+            <img class="down" alt="scroll down" src="/images/down-arrow-white.png"/>
+          </div>
+        </header>
+
 
         <div>
-
-        <Gallery photos={clothingArray} columns= {columns} onClick={this.openModal} />
+          <Gallery photos={clothingArray} columns= {columns} onClick={this.openModal} />
         </div>
         {this.state.selectedClothingItem&& 
-        <Modal visible={this.state.selectedClothingItem} width="400" height="300" effect="fadeInUp" onClickAway={() => this.closeModal()}>
+              <Modal visible={this.state.selectedClothingItem} width="400" height="300" effect="fadeInUp" onClickAway={() => this.closeModal()}>
                     <div>
                         {/* <img src={this.state.selectedClothingItem.image}/> */}
                         <h2>{this.state.selectedClothingItem.brand} </h2>

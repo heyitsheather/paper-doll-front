@@ -84,12 +84,7 @@ class AddClothing extends Component {
 
     return (
       <section className="App-header">
-   
-               
-{/*   
-        <h2>ADD A CLOTHING ITEM</h2> */}
-
-
+  
        
         <form class="form" onSubmit={event => this.handleSubmit(event)}>
         <Link to="/"><img class="icon" alt= "back"
@@ -139,10 +134,10 @@ class AddClothing extends Component {
           </label>
 
          
-          <label>
+          <div class="upload">
             {/* Image: */}
-            <Button> <input type="file" onChange={event => this.uploadImage(event)} /> </Button>
-          </label>
+            <input type="file" onChange={event => this.uploadImage(event)} /> 
+          </div>
           
            
         

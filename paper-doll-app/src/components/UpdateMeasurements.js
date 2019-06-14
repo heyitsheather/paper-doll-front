@@ -91,13 +91,19 @@ class UpdateMeasurements extends React.Component {
 
     const {chest, waist, hips, inseam} = this.state;
     return (
+      
       <header className="App-header">
       {/* <p>UPDATE MEASUREMENTS</p> */}
+      
 
 <form class="form" onSubmit={this.handleSubmit}>
 
 <Link to="/my-account"><img class="icon" alt= "back"
                       src= "/images/backarrow.png"/></Link>
+
+<Link to="/how-to-measure"><img class="icon" alt= "back"
+                      src= "/images/helpinfo.png"/></Link>
+
   
  <label>   
             {/* <p>Measure under your armpits, around your shoulder blades,

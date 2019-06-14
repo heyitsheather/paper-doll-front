@@ -48,7 +48,7 @@ class LoginPage extends Component {
     return (
      
         <header className="App-header">
-        
+        <div class="loginpage">
         <img class="app-logo" alt= "header"
               src="images/pdlogowhite2.png"/>
           
@@ -70,7 +70,7 @@ class LoginPage extends Component {
           <Button>Log In</Button>
         </form>
         <Link to="/signup-page"><Button>New? Signup Here.</Button></Link>
-         
+        </div>
         </header>
         
        
