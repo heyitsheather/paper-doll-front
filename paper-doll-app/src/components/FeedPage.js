@@ -117,10 +117,11 @@ openModal(event, obj) {
           {/* <img class="avatar" alt= "avatar to settings" src= "/images/heyitsheadshot.jpg"/> */}
           {/* </Link> */}
 
-          <div>
-          <h3>HELLO, HEATHER</h3>
-          <p>WE THINK THESE MAY LOOK GREAT ON YOU</p>
-          </div>
+          {/* <div class="welcome"> */}
+          <img class="app-logo" alt= "header"
+              src="images/pdlogowhite2.png"/>
+          {/* <p>WE THINK THESE MAY LOOK GREAT ON YOU</p> */}
+          {/* </div> */}
 
           <div class= "scrolldown">
             <p>SCROLL DOWN</p>

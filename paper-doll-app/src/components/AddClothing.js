@@ -133,16 +133,21 @@ class AddClothing extends Component {
                 type="text" name="notes"  />
           </label>
 
-         
-          <div class="upload">
-            {/* Image: */}
-            <input type="file" onChange={event => this.uploadImage(event)} /> 
-          </div>
-          
-           
-        
+            <div class="file-field input-field">
+      <div class="btn">
+        <span>File</span>
+        <input type="file" onChange={event => this.uploadImage(event)}/>
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" placeholder="UPLOAD PHOTO"/>
+      </div>
+    </div>
 
+          <div class="buttons">
           <Button>SAVE THIS ITEM</Button>
+          </div>
+          {/* </div> */}
+
         </form>
       
       </section>

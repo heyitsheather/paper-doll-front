@@ -1,5 +1,7 @@
 import React, { Component, Redirect } from "react";
 import axios from "axios";
+import {Button} from "react-materialize";
+
 
 class SignupPage extends Component {
   constructor(props) {
@@ -53,82 +55,56 @@ class SignupPage extends Component {
 
     return (
       <section className="App-header">
-        <h2>Sign Up</h2>
+        {/* <h2>SIGN UP</h2> */}
 
         <form class="form" onSubmit={event => this.handleSubmit(event)}>
           <label>
-            Full Name:
+            FULL NAME:
             <input value={this.state.fullName}
                 onChange={event => this.genericSync(event)}
                 type="text" name="fullName" placeholder="Full Name" />
           </label>
 
           <label>
-            Email:
+            EMAIL:
             <input value={this.state.email}
                 onChange={event => this.genericSync(event)}
                 type="email" name="email" placeholder="fashionista@gmail.com" />
           </label>
 
           <label>
-            Password:
+            PASSWORD:
             <input value={this.state.originalPassword}
                 onChange={event => this.genericSync(event)}
                 type="password" name="originalPassword" placeholder="*********" />
           </label>
 
-          
-
-
           <label>
-            Chest:
+            MEASUREMENTS
             <input value={this.state.chest}
                 onChange={event => this.genericSync(event)}
-                type="number" name="chest" placeholder="38.5" />
+                type="number" name="chest" placeholder="CHEST (cm)" />
           </label>
 
           <label>
-            Waist:
             <input value={this.state.waist}
                 onChange={event => this.genericSync(event)}
-                type="number" name="waist" placeholder="31" />
+                type="number" name="waist" placeholder="WAIST (cm)" />
           </label>
 
           <label>
-            Hip:
             <input value={this.state.hips}
                 onChange={event => this.genericSync(event)}
-                type="number" name="hips" placeholder="40" />
+                type="number" name="hips" placeholder="HIP (cm)" />
           </label>
 
           <label>
-            Inseam:
             <input value={this.state.inseam}
                 onChange={event => this.genericSync(event)}
-                type="number" name="inseam" placeholder="32" />
+                type="number" name="inseam" placeholder="INSEAM (cm)"/>
           </label>
 
-
-{/* To find your correct size, use a tape measure and take these measurements.
- Stand with your back straight in front of a mirror, 
- to make sure that you measure correctly and that the tape measure is kept level.
-
-1. BUST
-Measure under your armpits, around your shoulder blades,
- and over the fullest part of your bust. Don’t pull the tape measure too hard.
-
-2. WAIST
-Measure around your natural waistline. This is the narrow part of your waist, 
-about an inch above your navel. Relax and breath out before you measure.
-
-3. HIP
-The hip should be measured around its fullest part (about 8 inch. below your waist).
-
-4. INSEAM
-This is the measurement from your ankle to your groin, when you stand with your legs straight.
- If possible, ask a friend to help you. This can also be measured on a pair of pants with the proper length. */}
-
-          <button>Sign Up</button>
+          <Button>Sign Up</Button>
         </form>
       </section>
     );

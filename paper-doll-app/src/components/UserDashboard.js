@@ -168,7 +168,7 @@ openModal(event, obj) {
               <div class="navigation">
               <Link to="/feed"> <img class="icon" alt= "back"
                       src= "/images/white-back-button.png"/></Link>
-                      PROFILE
+                      <b>PROFILE</b>
               <Link to="/my-account"> <img class="icon" alt= "back"
                       src= "/images/settings-white.png"/></Link>
               </div>
@@ -182,12 +182,11 @@ openModal(event, obj) {
                 </div>
 
         {this.state.selectedClothingItem&& 
-        <Modal visible={this.state.selectedClothingItem}  width="400" height="470" effect="fadeInUp" onClickAway={() => this.closeModal()}>
+        <Modal visible={this.state.selectedClothingItem}  width="300" height="470" effect="fadeInUp" onClickAway={() => this.closeModal()}>
                     <div>
-                        <p>EDIT THIS ITEM</p>
+          <p>EDIT THIS ITEM</p>
                         
-                          <img onClick={this.handleDelete} class= "trash" alt= "trash"
-                      src= "/images/garbage.png"/>
+          <img onClick={this.handleDelete} class= "trash" alt= "trash" src= "/images/garbage.png"/>
                     
           <form class="form" onSubmit={this.handleSubmit}>
           <label>

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
-// import logo from "../images/hanger-line.png"
 import {Button} from "react-materialize";
 
 class LoginPage extends Component {
@@ -52,16 +51,16 @@ class LoginPage extends Component {
         <img class="app-logo" alt= "header"
               src="images/pdlogowhite2.png"/>
           
+        <div class="form">
           <form onSubmit={event => this.handleSubmit(event)}>
-          <label>
             
+          <label>
             <input label="EMAIL" value={this.state.email}
                 onChange={event => this.genericSync(event)}
                 type="email" name="email" placeholder="EXAMPLE@PAPERDOLLS.COM" />
           </label>
 
           <label>
-           
             <input label="PASSWORD" value={this.state.originalPassword}
                 onChange={event => this.genericSync(event)}
                 type="password" name="originalPassword" placeholder="PASSWORD" />
@@ -69,12 +68,11 @@ class LoginPage extends Component {
 
           <Button>Log In</Button>
         </form>
-        <Link to="/signup-page"><Button>New? Signup Here.</Button></Link>
+        <Link class="link" to="/signup-page">NEW? SIGN UP HERE.</Link>
+        </div>
         </div>
         </header>
         
-       
-   
     );
   }
 }

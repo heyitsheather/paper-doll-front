@@ -155,24 +155,30 @@ handleSubmit=(event)=> {
     return (
       <header class="App-header">
       <section class="MyAccount">
-        
+
+      <div class="icons-group">
       <Link to="/"><img class="icon" alt= "back"
                       src= "/images/backarrow.png"/></Link>
+      </div>
+      <div class="buttons-group">
 
-        <img class="avatar" alt= "avatar"
-                      src= "/images/heyitsheadshot.jpg"/>
-
-          <Button>CHANGE AVATAR</Button>
+      <div class="buttons">
+      <Button class="buttons">CHANGE AVATAR</Button>
           {/* <Button>ACCOUNT SETTINGS</Button> */}
-
-              <Link to="/update-measurements">
-              <Button> UPDATE MEASUREMENTS</Button>
-                </Link>
-              
+      </div>
+      
+      
+      <div class="buttons">
+      <Link to="/update-measurements">
+          <Button class="buttons"> UPDATE MEASUREMENTS</Button>
+          </Link>
+      </div>      
          
-          <Button onClick={() => this.logoutClick()}>LOG OUT
-          </Button>
+      <div class="buttons">
+      <Button  onClick={() => this.logoutClick()}>LOG OUT</Button>
+      </div>
 
+      </div>
 
       </section>
       </header>
